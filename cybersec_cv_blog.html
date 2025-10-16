@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Minh Quang - Cybersecurity Specialist</title>
+    <meta name="description" content="Sinh viên An ninh mạng tại VNU-IS, đam mê bảo vệ hệ thống số và xây dựng giải pháp bảo mật">
+    <meta name="keywords" content="cybersecurity, penetration testing, security analyst, network security, ethical hacking, VNU, an ninh mang">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A66C2;
+            --secondary: #00D4FF;
+            --dark: #0A0E27;
+            --gray: #64748B;
+            --light-gray: #F1F5F9;
+            --white: #FFFFFF;
+            --accent: #10B981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .bio {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-btn.primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .social-btn.secondary {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Projects */
+        .project-card {
+            border: 2px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(10, 102, 194, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .skill-item:hover .skill-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Education */
+        .education-item {
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background: var(--light-gray);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .education-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item .school {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .cert-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .cert-badge {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .cert-item:hover .cert-badge {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hoàng Minh Quang</h1>
+                <p class="tagline">🛡️ Cybersecurity Student | Future Security Engineer</p>
+                <p class="bio">
+                    Sinh viên năm cuối ngành An ninh mạng tại Đại học Quốc gia Hà Nội. Đam mê nghiên cứu về 
+                    penetration testing, vulnerability research và security automation. Mục tiêu trở thành 
+                    Security Engineer chuyên nghiệp, góp phần xây dựng môi trường số an toàn cho doanh nghiệp Việt Nam.
+                </p>
+                <div class="social-links">
+                    <a href="mailto:minhquanghoang205@gmail.com" class="social-btn primary">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/quang-hoàng-minh-54a929344" class="social-btn secondary">💼 LinkedIn</a>
+                    <a href="https://github.com/quanghoang205" class="social-btn secondary">💻 GitHub</a>
+                    <a href="#" class="social-btn secondary">📄 Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div>
+                <!-- Projects Section -->
+                <section class="section">
+                    <h2>🚀 Dự Án Nổi Bật</h2>
+                    
+                    <div class="project-card">
+                        <h3>Ứng Dụng Giám Sát Mạng Thời Gian Thực</h3>
+                        <p>
+                            Xây dựng hệ thống packet capture để trích xuất và phân tích lưu lượng mạng, phát hiện 
+                            anomaly detection tự động với dashboard trực quan. Hỗ trợ phát hiện sớm hành vi tấn công 
+                            và giám sát chủ động trong mạng nội bộ.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Packet Capture</span>
+                            <span class="tag">Network Analysis</span>
+                            <span class="tag">Anomaly Detection</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Demo Blockchain - Hệ Thống CLI</h3>
+                        <p>
+                            Triển khai blockchain hoàn chỉnh với Proof of Work (difficulty=4, ~0.5s/block). 
+                            Tích hợp chữ ký số RSA với 100% accuracy, thời gian xác thực ≈0.5s/giao dịch. 
+                            CLI interface hỗ trợ mining, transaction management và node synchronization.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Blockchain</span>
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">RSA</span>
+                            <span class="tag">PoW</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>SQL Injection Security Audit (Lab Environment)</h3>
+                        <p>
+                            Thực hiện penetration testing trên hệ thống quản lý khách sạn để phát hiện và phân tích 
+                            lỗ hổng SQL Injection. Đề xuất biện pháp khắc phục và best practices cho database security. 
+                            <em>Thực hiện trong môi trường lab được phép.</em>
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">SQL Injection</span>
+                            <span class="tag">Penetration Testing</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">OWASP</span>
+                            <span class="tag">Security Audit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Hệ Thống Quản Lý Khách Sạn - Database Design</h3>
+                        <p>
+                            Thiết kế và triển khai cơ sở dữ liệu MySQL cho hệ thống quản lý khách sạn với 
+                            các tính năng: quản lý phòng (trạng thái, giá, loại), tra cứu nhanh, và xử lý đặt phòng. 
+                            Tối ưu hóa query performance cho lookup operations.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Database Design</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Backend</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <h2>🎓 Học Vấn</h2>
+                    
+                    <div class="education-item">
+                        <h3>Cử Nhân Công Nghệ Thông Tin Ứng Dụng</h3>
+                        <p class="school">Đại học Quốc gia Hà Nội (VNU-IS) - Trường Quốc tế</p>
+                        <p class="date">2023 - 2027 (Dự kiến)</p>
+                        <p style="margin-top: 0.5rem; color: var(--gray);">
+                            Chuyên ngành: An Ninh Mạng | GPA: 3.2/4.0
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Phát Triển Kỹ Năng Bổ Sung</h3>
+                        <p class="school">Tự Học & Thực Hành</p>
+                        <p class="date">2023 - Hiện tại</p>
+                        <p style="margin-top: 0.5rem; color: var(--gray);">
+                            Tham gia CTF challenges, xây dựng security tools, nghiên cứu vulnerability research
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2>💪 Kỹ Năng</h2>
+                    
+                    <h3 style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem;">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🔐</div>
+                            <div>
+                                <strong>Penetration Testing</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🌐</div>
+                            <div>
+                                <strong>Network Security</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🐍</div>
+                            <div>
+                                <strong>Python, Bash</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🛠️</div>
+                            <div>
+                                <strong>Kali Linux, Metasploit</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">☁️</div>
+                            <div>
+                                <strong>Cloud Security (AWS)</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📊</div>
+                            <div>
+                                <strong>SIEM Tools</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--gray); font-size: 1rem; margin: 2rem 0 1rem;">Soft Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🎯</div>
+                            <div>
+                                <strong>Problem Solving</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📝</div>
+                            <div>
+                                <strong>Technical Writing</strong>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">👥</div>
+                            <div>
+                                <strong>Team Collaboration</strong>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section class="section">
+                    <h2>🏆 Hoạt động & Thành Tựu</h2>
+                    
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-badge">🎓</div>
+                            <div>
+                                <strong>CTF Participant</strong>
+                                <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.2rem;">
+                                    Tham gia các cuộc thi Capture The Flag
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">👥</div>
+                            <div>
+                                <strong>Team Projects</strong>
+                                <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.2rem;">
+                                    Nhóm bài tập về an ninh mạng & phát triển phần mềm
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">🇬🇧</div>
+                            <div>
+                                <strong>English Proficiency</strong>
+                                <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.2rem;">
+                                    B2 Level - Technical English
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">🔧</div>
+                            <div>
+                                <strong>Security Tools Development</strong>
+                                <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.2rem;">
+                                    Xây dựng công cụ tự động hóa bảo mật
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Info -->
+                <section class="section">
+                    <h2>📬 Liên Hệ</h2>
+                    <div style="color: var(--gray); line-height: 2;">
+                        <p><strong>📧 Email:</strong> minhquanghoang205@gmail.com</p>
+                        <p><strong>📱 Phone:</strong> 0942386482</p>
+                        <p><strong>📍 Location:</strong> Hà Nội, Việt Nam</p>
+                        <p><strong>💼 LinkedIn:</strong> linkedin.com/in/quang-hoàng-minh-54a929344</p>
+                        <p><strong>💻 GitHub:</strong> github.com/quanghoang205</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Hoàng Minh Quang. Built with passion for cybersecurity 🔒</p>
+        </div>
+    </div>
+</body>
+</html>
